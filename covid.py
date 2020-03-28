@@ -16,7 +16,7 @@ app = create_app()
 @app.route('/home')
 def home():
     ts = datetime.datetime.utcnow().strftime('%B %d %Y - %H:%M:%S')
-    with open('/root/covid/cases.json') as json_file:
+    with open('/cases.json') as json_file: # Put the right path to cases.json file
         data = json.load(json_file)
     confirmed = 0
     for cases in data:
