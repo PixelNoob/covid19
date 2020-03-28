@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+<title>Covid-19 Online</title>
+</head>
+   <body>
+
+     <div id="Font">
+     <p style="text-align: center;"><strong>Covid19 Cases Online</strong></p>
+     
+<p style="text-align: center;">Confirmed: {{ "{:,.0f}".format(confirmed) }}</p>
+<p style="text-align: center;">Deaths: <font color="red">{{ "{:,.0f}".format(deaths) }}</font></p>
+
+     <p style="text-align: center;">Coronavirus disease 2019 (COVID-19) is an infectious disease caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). The disease was first identified in 2019 in Wuhan, the capital of Hubei, China, and has since spread globally, resulting in the 2019–2020 coronavirus pandemic. Common symptoms include fever, cough, and shortness of breath. Other symptoms may include muscle pain, sputum production, diarrhea, sore throat, abdominal pain, and loss of smell or taste. While the majority of cases result in mild symptoms, some progress to pneumonia and multi-organ failure. <a href="https://en.wikipedia.org/wiki/Coronavirus_disease_2019">Wikipedia</a></p>
+     </div>
+
+<center><script type="text/javascript" src="//uprimp.com/bnr.php?section=General&pub=521896&format=300x250&ga=g"></script>
+<noscript><a href="https://yllix.com/publishers/521896" target="_blank"><img src="//ylx-aff.advertica-cdn.com/pub/300x250.png" style="border:none;margin:0;padding:0;vertical-align:baseline;" alt="ylliX - Online Advertising Network" /></a></noscript></center>
+
+      <table align="center">
+         <thead>
+            <td><b>Country</b></td>
+            <td><b>Cases</b></td>
+            <td><b>Deaths</b></td>
+         </thead>
+
+         {% for key, value in rows.items() %}
+            <tr>
+               <td>{{key}}</td>
+               <td>{{ "{:,.0f}".format(value[0]) }}</td>
+               <td><font color="red">{{ "{:,.0f}".format(value[1]) }}</font></td>
+            </tr>
+         {% endfor %}
+      </table>
+<div id="Font">
+<p style="text-align: center;">Last Updated: {{ts}}</p>
+<p style="text-align: center;">Source: Johns Hopkins University</p>
+</div>
+<p style="text-align: right;"><sub>Developed by <a href="https://github.com/PixelNoob">PixelNoob</a> &hearts;</sub></p>
+   </body>
+</html>
+

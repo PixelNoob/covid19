@@ -1,0 +1,59 @@
+body {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#Font {
+font-family: Georgia, serif;
+font-size: 21px;
+letter-spacing: 0px;
+word-spacing: 2px;
+color: #565656;
+font-weight: normal;
+text-decoration: none;
+font-style: normal;
+font-variant: normal;
+text-transform: none;
+}
+
+#parrafo {
+font-family: Georgia, serif;
+font-size: 19px;
+letter-spacing: 0px;
+word-spacing: 2px;
+color: #565656;
+font-weight: normal;
+text-decoration: none;
+font-style: normal;
+font-variant: normal;
+text-transform: none;
+}
+
+<style>
+a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: purple;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: blue;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+</style>
+
