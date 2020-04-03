@@ -18,15 +18,16 @@ def home():
     ts = datetime.datetime.utcnow().strftime('%B %d %Y - %H:%M:%S')
     with open('/scripts/cases.json') as json_file: # Put the right path to cases.json file
         data = json.load(json_file)
-    confirmed = 0
-    for cases in data:
-        confirmed = confirmed + int(cases['confirmed'])
+
     deaths = 0
+    confirmed = 0
+    rows = {}
+
     for cases in data:
         deaths = deaths + int(cases['deaths'])
-    rows= {}
-    for cases in data:
+        confirmed = confirmed + int(cases['confirmed'])
         rows.update({ cases['country']: (cases['confirmed'], cases['deaths'])})
+
     return render_template("list.html",rows = rows, ts = ts, confirmed = confirmed, deaths = deaths )
 
 if __name__ == '__main__':
